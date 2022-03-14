@@ -8,11 +8,9 @@ import (
 )
 
 const TokenExpireDuration = time.Hour * 24 // 过期时间
-var MySecret = []byte("夏天夏天悄悄过去")
+var MySecret = []byte("secret")
 
 // MyClaims 自定义声明结构体并内嵌jwt.StandardClaims
-// jwt包自带的jwt.StandardClaims只包含了官方字段
-// 如果想要保存更多信息，都可以添加到这个结构体中
 type MyClaims struct {
 	UserID int64 `json:"user_id"`
 	Username string `json:"username"`
